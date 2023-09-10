@@ -79,25 +79,29 @@ export const MessageFooter: React.FC<InputProps> = ({
             <div className='bg-white p-3 pt-1 w-full'>
                 <div className='rounded-3xl border-[1px]'>
                     {/* Action Show */}
-                    <div className='w-full flex gap-3 m-1 mt-0 items-center overflow-x-auto' id='style-2'>
+                    <div className='w-full flex m-1 mt-0 items-center overflow-x-auto rounded-2xl pr-3' id='style-2'>
                         {/* file */}
                         {input.img.map((item: any, i: any) =>
                             <>
-                                <img className='rounded-2xl object-cover w-16 h-16 my-2'
-                                    alt="not found"
+                                <img className='rounded-2xl object-cover w-16 h-16 m-2'
+                                    alt="not found" key={i}
                                     src={URL.createObjectURL(item)} />
                                 <div className='sm:cursor-pointer relative top-[-25px] right-[30px] w-0'>
-                                    <RxCrossCircled className=' bg-white rounded-full' size={20} onClick={() => { handleDeleteImage(item.id) }} />
+                                    <RxCrossCircled className=' bg-white rounded-full' size={20}
+                                        onClick={() => { handleDeleteImage(item.id) }} />
                                 </div>
                             </>
                         )}
-                        {input.img.length > 0 && <label htmlFor='myImage'
-                            className='flex justify-center items-center w-16 h-16'>
-                            <HiOutlinePhotograph size={60} className='sm:cursor-pointer rounded-2xl' />
+
+                        {input.img.length > 0 && <label htmlFor='images'
+                            className='sm:cursor-pointer w-16 p-3
+                             h-16 bg-gray-100 rounded-2xl
+                             flex justify-center items-center'>
+                            <HiOutlinePhotograph size={40} />
                         </label>}
                         {/* reply message */}
                         {replyState.state.messageId &&
-                            <div className='flex m-3 justify-between w-full'>
+                        <div className='flex m-3 justify-between w-full'>
                                 <div>
                                     <p>{replyState.state?.authorId === messageUserId ? "Replying to yourself" : "Replying"}</p>
                                     {replyState.state?.message && <div>{replyState.state?.message}</div>}
@@ -110,7 +114,8 @@ export const MessageFooter: React.FC<InputProps> = ({
                                     className='flex justify-end sm:cursor-pointer'>
                                     <RxCrossCircled size={25} />
                                 </div>
-                            </div>}
+                        </div>}
+
                     </div>
 
                     <div className='flex items-center px-4'>
@@ -152,8 +157,7 @@ export const MessageFooter: React.FC<InputProps> = ({
                 id="myImage"
                 onChange={(event) => {
                     onChangeFilePicker(event)
-                }}
-            />
+                }}/>
         </>
     )
 }

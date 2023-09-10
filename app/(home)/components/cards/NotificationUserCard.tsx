@@ -47,7 +47,7 @@ const NotificationUserCard: React.FC<UserCardProps> = ({
                         <ListItemPrefix>
                             <img className='w-14 h-14 rounded-full object-cover border-[1px]'
                                 alt="not found"
-                                src={user?.image || "/user.png"} />
+                                src={user?.image || "user.png"} />
                         </ListItemPrefix>
                         <div>
                             <Typography variant="h6" color="blue-gray">

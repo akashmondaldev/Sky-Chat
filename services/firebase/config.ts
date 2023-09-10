@@ -5,17 +5,14 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.APIKEY,
-  authDomain: process.env.AUTHDOMAIN,
-  projectId: process.env.PROJECTID,
-  storageBucket: process.env.STORAGEBUCKET,
-  messagingSenderId: process.env.MESSAGINGSENDERID,
-  appId: process.env.APPID
+  apiKey: "AIzaSyBcVSdMQGFxgaBIiJwvfmL5EIbEnUb0tJo",
+  authDomain: "next-js-chat-app-33c2b.firebaseapp.com",
+  projectId: "next-js-chat-app-33c2b",
+  storageBucket: "next-js-chat-app-33c2b.appspot.com",
+  messagingSenderId: "269077837950",
+  appId: "1:269077837950:web:aa04484eb3107351d2c02f"
 };
 
 // Initialize Firebase
